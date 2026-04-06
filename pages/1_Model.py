@@ -144,6 +144,20 @@ with col_graph:
     ax.set_ylabel("Check-ins")
     st.pyplot(fig)
 
+# -------------------------------
+# METRIC CARD - MODEL PAGE
+# -------------------------------
+
+final_checkins = int(checkins[-1])
+
+st.markdown(f"""
+<div class="card">
+    <h4>📊 Final Daily Check-ins</h4>
+    <h2 style="color:#38bdf8;">{final_checkins:,}</h2>
+    <p>This represents the predicted number of check-ins at the end of the simulation period.</p>
+</div>
+""", unsafe_allow_html=True)
+
 with col_text:
     st.markdown("""
     <div class="card">
