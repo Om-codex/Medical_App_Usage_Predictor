@@ -151,6 +151,24 @@ with col_graph:
 
     st.pyplot(fig)
 
+# -------------------------------
+# METRIC CARDS - SENSITIVITY PAGE
+# -------------------------------
+
+col_s1, col_s2, col_s3 = st.columns(3)
+
+for i, p_val in enumerate([0.3, 0.4, 0.5]):
+    checkins_val = int((users[-1]) * p_val * c)
+
+    with [col_s1, col_s2, col_s3][i]:
+        st.markdown(f"""
+        <div class="card">
+            <h4>📊 p = {p_val}</h4>
+            <h2 style="color:#38bdf8;">{checkins_val:,}</h2>
+            <p>Final check-ins for this engagement level.</p>
+        </div>
+        """, unsafe_allow_html=True)
+
 with col_text:
     st.markdown("""
     <div class="card">
