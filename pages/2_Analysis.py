@@ -219,6 +219,43 @@ with col_g3_text:
     """, unsafe_allow_html=True)
 
 # -------------------------------
+# METRIC CARDS - ANALYSIS PAGE
+# -------------------------------
+
+final_users = int(users[-1])
+final_checkins = int(checkins[-1])
+final_dau = int(users[-1] * p)
+
+col_m1, col_m2, col_m3 = st.columns(3)
+
+with col_m1:
+    st.markdown(f"""
+    <div class="card">
+        <h4>👥 Total Users</h4>
+        <h2 style="color:#38bdf8;">{final_users:,}</h2>
+        <p>Total users at the end of simulation.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col_m2:
+    st.markdown(f"""
+    <div class="card">
+        <h4>📊 Daily Check-ins</h4>
+        <h2 style="color:#38bdf8;">{final_checkins:,}</h2>
+        <p>Total daily app usage.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col_m3:
+    st.markdown(f"""
+    <div class="card">
+        <h4>⚡ Active Users</h4>
+        <h2 style="color:#38bdf8;">{final_dau:,}</h2>
+        <p>Users actively using the app daily.</p>
+    </div>
+    """, unsafe_allow_html=True)
+
+# -------------------------------
 # Final Insight
 # -------------------------------
 st.markdown("---")
